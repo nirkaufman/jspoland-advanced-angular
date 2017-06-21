@@ -1,5 +1,6 @@
 import {Directive, ViewContainerRef, ComponentFactoryResolver, HostListener, Input, ComponentRef} from '@angular/core';
 import {DynamicComponent} from './dynamic.component';
+import {LoggerService} from '../utils/logger.service';
 
 @Directive({
   selector: '[aaToolTip]',
@@ -12,6 +13,7 @@ export class ToolTipDirective {
   @Input() aaToolTip: string;
 
   constructor(private entry: ViewContainerRef,
+              logger: LoggerService,
               private cfr: ComponentFactoryResolver) {
   }
 

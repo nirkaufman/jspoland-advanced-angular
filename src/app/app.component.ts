@@ -1,35 +1,20 @@
-import {Component, ViewChildren, QueryList} from '@angular/core';
-import {SidebarComponent} from './sidebar.component';
+import {Component, ViewEncapsulation, ChangeDetectionStrategy} from '@angular/core';
+import {LoggerService} from './utils/logger.service';
+
 
 @Component({
-  selector: 'aa-root',
-  template: `
-    <aa-tabs>
-
-      <aa-tab label="first">
-        <h2>first tab</h2>
-      </aa-tab>
-
-      <aa-tab label="second">
-        <h2>second tab</h2>
-      </aa-tab>
-
-      <aa-tab label="third">
-        <h2>Hello im a tab!</h2>
-      </aa-tab>
-
-    </aa-tabs>
-
+  selector     : 'aa-root',
+  template     : `
+    <aa-child></aa-child>
   `,
-  styles  : []
 })
 export class AppComponent {
 
-  @ViewChildren(SidebarComponent)
-  private sidebars: QueryList<SidebarComponent>;
+  public title = 'Hello Title';
 
-  toggle() {
-    this.sidebars.forEach(bar => bar.toggle());
+  constructor(logger: LoggerService) {
+    logger.log('HELLOOO');
+
   }
 
 }

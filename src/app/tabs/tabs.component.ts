@@ -9,7 +9,6 @@ import {TabComponent} from '../tab/tab.component';
         <a (click)="activateTab(tab)">{{ tab.label }}</a>
       </li>
     </ul>
-
     <ng-content></ng-content>
   `,
   styles  : []
