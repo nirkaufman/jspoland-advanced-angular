@@ -1,14 +1,35 @@
-import { Component } from '@angular/core';
+import {Component, ViewChildren, QueryList} from '@angular/core';
+import {SidebarComponent} from './sidebar.component';
 
 @Component({
   selector: 'aa-root',
   template: `
-    <h1>
-      Welcome to {{title}}!!
-    </h1>
+    <aa-tabs>
+
+      <aa-tab label="first">
+        <h2>first tab</h2>
+      </aa-tab>
+
+      <aa-tab label="second">
+        <h2>second tab</h2>
+      </aa-tab>
+
+      <aa-tab label="third">
+        <h2>Hello im a tab!</h2>
+      </aa-tab>
+
+    </aa-tabs>
+
   `,
-  styles: []
+  styles  : []
 })
 export class AppComponent {
-  title = 'aa';
+
+  @ViewChildren(SidebarComponent)
+  private sidebars: QueryList<SidebarComponent>;
+
+  toggle() {
+    this.sidebars.forEach(bar => bar.toggle());
+  }
+
 }
