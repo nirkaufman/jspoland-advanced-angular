@@ -1,11 +1,17 @@
+import {StorageService} from './storage.service';
+import {Injectable} from '@angular/core';
+
+@Injectable()
 export class LoggerService {
+  private logs: string[];
 
   constructor() {
-    console.log('LoggerService constructed');
+    this.logs = [];
   }
 
   public log(value: string) {
-    console.log(`logger at ${new Date()}:${value}`);
+    this.logs.push(value);
+    console.log(value);
   }
 
 }

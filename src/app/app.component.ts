@@ -1,20 +1,15 @@
-import {Component, ViewEncapsulation, ChangeDetectionStrategy} from '@angular/core';
-import {LoggerService} from './utils/logger.service';
-
+import {Component} from '@angular/core';
+import {ListService} from './list.service';
 
 @Component({
-  selector     : 'aa-root',
-  template     : `
-    <aa-child></aa-child>
+  selector: 'aa-root',
+  template: `
+    <aa-todolist [list]="list.items"
+                 (item)="list.addItem($event)"></aa-todolist>
   `,
 })
 export class AppComponent {
-
-  public title = 'Hello Title';
-
-  constructor(logger: LoggerService) {
-    logger.log('HELLOOO');
+  constructor(public list: ListService) {
 
   }
-
 }
