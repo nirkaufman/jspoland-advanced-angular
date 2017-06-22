@@ -30,11 +30,6 @@ import {UtilsModule} from './utils/utils.module';
   imports     : [HttpModule, BrowserModule, DynamicModule, UtilsModule, RouterModule],
   bootstrap   : [AppComponent],
   providers   : [
-    {
-      provide   : NetworkService,
-      useFactory: (http) => new NetworkService('http:/nir', http),
-      deps      : [Http]
-    },
     {provide: ListService, useClass: ListService},
     {provide: Api, useValue: 'http://'},
   ]
