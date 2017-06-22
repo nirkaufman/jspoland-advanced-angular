@@ -16,6 +16,9 @@ import {TabsComponent} from './tabs/tabs.component';
 import {TodolistComponent} from './todolist/todolist.component';
 import {TopMenuComponent} from './top-menu/top-menu.component';
 import {UtilsModule} from './utils/utils.module';
+import { ListHeaderComponent } from './list-header/list-header.component';
+import { ListComponent } from './list/list.component';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -26,7 +29,7 @@ import {UtilsModule} from './utils/utils.module';
     TabComponent,
     ChildComponent,
     TodolistComponent,
-    ItemComponent, MenuComponent, TopMenuComponent],
+    ItemComponent, MenuComponent, TopMenuComponent, ListHeaderComponent, ListComponent, FilterPipe],
   imports     : [HttpModule, BrowserModule, DynamicModule, UtilsModule, RouterModule],
   bootstrap   : [AppComponent],
   providers   : [
